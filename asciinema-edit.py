@@ -177,7 +177,7 @@ def main():
     parser.add_argument("--delay", type=float, default = 1)
     parser.add_argument("--factor", type=float, default = 1)
     parser.add_argument("--out", help = 'Output file, default is stdout')
-    parser.add_argument("file", help = "Input .cast file")
+    parser.add_argument("inputfile", help = "Input .cast file")
 
     args = parser.parse_args()
     print(args)
@@ -185,7 +185,7 @@ def main():
     if args.range and (args.start or args.end):
         assert("Must supply either --range or start/end!")
 
-    r = Recording(args.file, args.out)
+    r = Recording(args.inputfile, args.out)
     r.open()
     
     ranges = []
